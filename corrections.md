@@ -1,7 +1,5 @@
 # PHP Login Error Analysis
 
-I looked at the Apache error logs, and the reason you're seeing a blank screen (or a 500 error) instead of a PHP error is because `display_errors` is turned off in the PHP configuration. However, behind the scenes, PHP is throwing a "Fatal error" when trying to log in.
-
 Here is exactly what is happening and why, step-by-step:
 
 ### 1. The Variable Name Mismatch
@@ -27,9 +25,9 @@ In `auth/login.php`, when the login is successful, you have:
 header('Location: ../dashboard/index.php');
 exit;
 ```
-This is actually correct! But I want to point it out as a good practice you followed. Always use `exit;` or `die();` immediately after a `header()` redirect so the rest of the script doesn't continue executing. 
+You should always use `exit;` or `die();` immediately after a `header()` redirect so the rest of the script doesn't continue executing. 
 
-### What you should do next (Don't worry, I haven't fixed it yet!):
+### What you should do next:
 1. Open `auth/login.php` and `config/db.php`.
 2. Decide whether you want your database connection variable to be named `$conn` or `$pdo`.
 3. Update one of the files so they both use the exact same variable name!
