@@ -1,47 +1,56 @@
-body{
+body {
     background-color: lightblue;
 }
-.login-wrapper{
+
+.login-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    align-content:  center;
+    align-content: center;
     height: 40vh;
     margin-top: 200px;
 }
-.login-box{
+
+.login-box {
     background: white;
     box-shadow: 0 4px 12px;
     border-radius: 8px;
     padding: 35px 30px;
 }
-.login-box h1{
+
+.login-box h1 {
     text-align: center;
     margin-bottom: 20px;
 }
-.login-box .subtitle{
+
+.login-box .subtitle {
     text-align: center;
     font-size: 20px;
     color: coral;
-    margin:0;
+    margin: 0;
     margin-bottom: 20px;
 
 }
-.login-box label{
+
+.login-box label {
     display: block;
     font-size: 20px;
-    margin-bottom: 20px;
-    margin: 0px;
+    margin-bottom: 8px;
     font-weight: bold;
 }
-.login-box input{
+
+.login-box input {
     padding: 9px;
     border-radius: 5px;
     font-size: 20px;
+    margin-bottom: 20px;
     width: 100%;
     border: 2px solid grey;
+    box-sizing: border-box;
+    /* this is to make the input field to  fit in the box */
 }
-.login-box button{
+
+.login-box button {
     background-color: pink;
     color: blue;
     font-weight: bold;
@@ -50,10 +59,11 @@ body{
     padding: 9px;
     border-radius: 4px;
     border: 2px solid brown;
-    cursor:pointer;
+    cursor: pointer;
     margin-bottom: 20px;
-}
-.login-box button:hover{
-    background-color: hotpink;
+    box-sizing: border-box;
 }
 
+.login-box button:hover {
+    background-color: hotpink;
+}
