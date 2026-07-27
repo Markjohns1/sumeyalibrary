@@ -11,7 +11,7 @@ if ($search !== '') {
     // is user input, and user input is never trusted directly in SQL.
     $stmt = $pdo->prepare(
         "SELECT books.*, categories.name AS category_name
-         FROM books
+         FROM books 
          JOIN categories ON books.category_id = categories.id
          WHERE books.title LIKE ? OR books.author LIKE ?
          ORDER BY books.title ASC"
@@ -56,7 +56,8 @@ require '../includes/header.php';
     </thead>
     <tbody>
         <?php if (count($books) === 0): ?>
-            <tr><td colspan="5">No books found.</td></tr>
+
+            <tr><td colspan="5">No books found!</td></tr>
         <?php endif; ?>
 
         <?php foreach ($books as $book): ?>
